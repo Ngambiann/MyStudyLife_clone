@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class Tasks extends StatefulWidget {
-  const Tasks({super.key});
+class Settings extends StatefulWidget {
+  const Settings({super.key});
 
   @override
-  State<Tasks> createState() => _TasksState();
+  State<Settings> createState() => _SettingsState();
 }
 
-class _TasksState extends State<Tasks> {
+class _SettingsState extends State<Settings> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Add Task"),
+        title: const Text('Settings'),
         backgroundColor: Colors.indigoAccent,
       ),
     );

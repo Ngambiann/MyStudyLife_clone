@@ -17,7 +17,7 @@ class _LoginState extends State<Login> {
     return Scaffold(
         appBar: AppBar(
           title: const Text("Login"),
-          backgroundColor: Colors.deepPurple,
+          backgroundColor: Colors.indigoAccent,
           centerTitle: true,
         ),
         body: Padding(
@@ -49,7 +49,7 @@ class _LoginState extends State<Login> {
                   ElevatedButton(
                       style: const ButtonStyle(
                           backgroundColor: WidgetStatePropertyAll(
-                              Color.fromARGB(255, 156, 136, 190))),
+                              Color.fromARGB(255, 70, 83, 206))),
                       onPressed: () {
                         Navigator.of(context).push(MaterialPageRoute(
                             builder: (context) => const Dasboard()));

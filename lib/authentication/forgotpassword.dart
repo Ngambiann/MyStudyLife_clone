@@ -13,7 +13,7 @@ class _ForgotpasswordState extends State<Forgotpassword> {
     return Scaffold(
       appBar: AppBar(
         title: const Text("Recover Account"),
-        backgroundColor: Colors.deepPurple,
+        backgroundColor: Colors.indigoAccent,
       ),
       body: Padding(padding:const  EdgeInsets.all(15),
       child: Column(
