@@ -34,39 +34,42 @@ class _DasboardState extends State<Dasboard>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        bottom: TabBar(
-          tabs: const [
-            Tab(
-                icon: Icon(Icons.calendar_month_rounded),
-                child: Tooltip(message: "today")),
-            Tab(
-                icon: Icon(Icons.check_box_rounded),
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(100),
+        child: AppBar(
+          bottom: TabBar(
+            tabs: const [
+              Tab(
+                  icon: Icon(Icons.calendar_month_rounded),
+                  child: Tooltip(message: "today")),
+              Tab(
+                  icon: Icon(Icons.check_box_rounded),
+                  child: Tooltip(
+                    message: "today",
+                  )),
+              Tab(
+                icon: Icon(Icons.today_rounded),
                 child: Tooltip(
-                  message: "today",
-                )),
-            Tab(
-              icon: Icon(Icons.today_rounded),
-              child: Tooltip(
-                message: "exams",
-              ),
-            )
-          ],
-          controller: _controller,
-        ),
-        backgroundColor: Colors.indigoAccent,
-        title: const Text("Dashboard"),
-        centerTitle: true,
-        leading: Builder(
-          builder: (context) {
-            return IconButton(
-              tooltip: "open",
-              icon: const Icon(Icons.menu_rounded),
-              onPressed: () {
-                Scaffold.of(context).openDrawer();
-              },
-            );
-          },
+                  message: "exams",
+                ),
+              )
+            ],
+            controller: _controller,
+          ),
+          backgroundColor: Colors.indigoAccent,
+          title: const Text("Dashboard"),
+          centerTitle: true,
+          leading: Builder(
+            builder: (context) {
+              return IconButton(
+                tooltip: "open",
+                icon: const Icon(Icons.menu_rounded),
+                onPressed: () {
+                  Scaffold.of(context).openDrawer();
+                },
+              );
+            },
+          ),
         ),
       ),
       body: TabBarView(
