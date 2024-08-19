@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:my_study_life_clone/authentication/login.dart';
-import 'package:my_study_life_clone/dasboard.dart';
+import 'package:my_study_life_clone/views/dasboard.dart';
 
 class Signup extends StatefulWidget {
   const Signup({super.key});

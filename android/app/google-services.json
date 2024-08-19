@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "695532651429",
+    "project_id": "fir-studyl24-9476e",
+    "storage_bucket": "fir-studyl24-9476e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695532651429:android:e01d7870816e3cb92e5e4c",
+        "android_client_info": {
+          "package_name": "com.android.application"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC-C_n59CWWGwJz_eMchr_EL5ptunjNgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:695532651429:android:cf735a690335a12f2e5e4c",
+        "android_client_info": {
+          "package_name": "com.example.my_study_life_clone"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCC-C_n59CWWGwJz_eMchr_EL5ptunjNgw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

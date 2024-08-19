@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:my_study_life_clone/dasboard.dart';
+import 'package:my_study_life_clone/views/dasboard.dart';
 
 
 void main() {

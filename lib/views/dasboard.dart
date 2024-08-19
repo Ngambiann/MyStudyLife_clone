@@ -1,11 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:my_study_life_clone/authentication/login.dart';
-import 'package:my_study_life_clone/drawers/exams.dart';
-import 'package:my_study_life_clone/drawers/schedule.dart';
-import 'package:my_study_life_clone/drawers/settings.dart';
+import 'package:my_study_life_clone/views/exams.dart';
+import 'package:my_study_life_clone/views/schedule.dart';
+import 'package:my_study_life_clone/views/settings.dart';
 
-import 'package:my_study_life_clone/drawers/tasks.dart';
+import 'package:my_study_life_clone/views/tasks.dart';
 
 class Dasboard extends StatefulWidget {
   const Dasboard({super.key});
