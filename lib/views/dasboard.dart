@@ -1,6 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:my_study_life_clone/authentication/login.dart';
+import 'package:my_study_life_clone/services/firestore.dart';
 import 'package:my_study_life_clone/views/exams.dart';
 import 'package:my_study_life_clone/views/schedule.dart';
 import 'package:my_study_life_clone/views/settings.dart';
@@ -16,6 +17,32 @@ class Dasboard extends StatefulWidget {
 
 class _DasboardState extends State<Dasboard>
     with SingleTickerProviderStateMixin {
+  final FirestoreTasks firestoreTasks = FirestoreTasks();
+  final TextEditingController textController = TextEditingController();
+  void openTaskBox() {
+    showDialog(
+        context: context,
+        builder: (context) => AlertDialog(
+              content: TextField(
+                //user input text
+                controller: textController,
+              ),
+              actions: [
+                //save button
+                ElevatedButton(
+                    onPressed: () {
+                      //adds tasks
+                      firestoreTasks.addTask(textController.text);
+                      //clear text controller
+                      textController.clear();
+                      //close box
+                      Navigator.pop(context);
+                    },
+                    child: const Text('add'))
+              ],
+            ));
+  }
+
   late TabController _controller;
 
   @override
@@ -38,20 +65,24 @@ class _DasboardState extends State<Dasboard>
         preferredSize: const Size.fromHeight(100),
         child: AppBar(
           bottom: TabBar(
-            tabs: const [
+            tabs:  [
               Tab(
-                  icon: Icon(Icons.calendar_month_rounded),
-                  child: Tooltip(message: "today")),
+                icon: IconButton(onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Schedule()));
+                }, 
+                  icon: const Icon(Icons.calendar_month_rounded),
+          )),
               Tab(
-                  icon: Icon(Icons.check_box_rounded),
-                  child: Tooltip(
-                    message: "today",
-                  )),
+                  icon: IconButton(onPressed:(){
+                    Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Tasks()));
+                  },    icon:const Icon(Icons.check_box_rounded)),
+                 ),
               Tab(
-                icon: Icon(Icons.today_rounded),
-                child: Tooltip(
-                  message: "exams",
-                ),
+                icon:IconButton(onPressed: (){
+                  Navigator.of(context).push(MaterialPageRoute(builder: (context)=>const Exams()));
+                },
+                icon: const Icon(Icons.today_rounded),
+                )
               )
             ],
             controller: _controller,
@@ -81,7 +112,7 @@ class _DasboardState extends State<Dasboard>
           ),
           Column(
             children: [
-              Text('Due Tommorow'),
+              
             ],
           ),
           Column(children: [
@@ -147,10 +178,7 @@ class _DasboardState extends State<Dasboard>
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.of(context)
-              .push(MaterialPageRoute(builder: (context) => const Tasks()));
-        },
+        onPressed: openTaskBox,
         shape: const CircleBorder(),
         child: const Icon(Icons.add_card),
       ),
